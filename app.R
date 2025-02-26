@@ -39,7 +39,7 @@ ui <- page_sidebar(
     br(),
     checkboxInput("dark_mode", "Dark mode", value = FALSE)
   ),
-    card_body(
+  card_body(
       card("File Contents",
       tableOutput("table")
       ),
@@ -47,8 +47,7 @@ ui <- page_sidebar(
       card(downloadButton("downloadData", "Download Herdname.DNQ")
       )
     )
-  
-)
+  )
 
 # Define server logic required to draw a histogram
 server <- function(input, output, session) {
@@ -62,7 +61,7 @@ server <- function(input, output, session) {
       }
     )
   })
-  
+
   d <- reactive({
     req(input$upload) # req() is used to ensure the file is uploaded
     readr::read_csv(input$upload$datapath,
