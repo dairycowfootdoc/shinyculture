@@ -22,15 +22,15 @@ dark <- bs_theme(bg = "black", fg = "#ffcc33", primary = "#7a0019")
 
 # Define UI for application that draws a histogram
 ui <- page_sidebar(
-  title = "Convert .csv Culture Files",
+  title = "Convert .csv culture results to allow DC305 import of culture results",
   sidebar = sidebar(
     fileInput(
       inputId = "upload",
-      label = "Upload a file (Accepts .csv files only)",
+      label = "Upload a .csv file with no collumn headings (Accepts .csv files only)",
       # Specify the file type(s) that can be uploaded (does not guarantee a csv)
       accept = ".csv"
     ),
-    textInput("herd", "Herd Name", c("Test")
+    textInput("herd", "Enter HerdCode (Usually 8 numbers)", c("Test")
     # selectInput(
     #   "herd", "Select Herd",
     #   choices = c("41464500", "41230523")
@@ -44,7 +44,7 @@ ui <- page_sidebar(
       tableOutput("table")
       ),
       # Button
-      card(downloadButton("downloadData", "Download")
+      card(downloadButton("downloadData", "Download Herdname.DNQ")
       )
     )
   
