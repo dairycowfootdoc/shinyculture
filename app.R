@@ -12,6 +12,7 @@ library(tidyverse)
 library(gt)
 library(bslib)
 library(thematic)
+library(shinyWidgets)
 
 
 # set themes
@@ -44,9 +45,17 @@ ui <- page_sidebar(
       tableOutput("table")
       ),
       # Button
-      card(downloadButton("downloadData", "Download Herdname.DNQ")
+      card(downloadButton("downloadData", "Download Herdname.DNQ"),
+           height = "75px"
       )
-    )
+          ),
+  #shinyWidgets::setBackgroundImage(src = "b_clean_labelled.jpg")
+  img(src = "b_clean_labelled.jpg",
+      width = "75px",
+      height = "75px",
+      style = "position: fixed; bottom: 
+      24px; right: 24px; opacity: 0.75; z-index: -1"
+      )
   )
 
 # Define server logic required to draw a histogram
