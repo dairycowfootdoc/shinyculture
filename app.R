@@ -12,7 +12,7 @@ library(tidyverse)
 library(gt)
 library(bslib)
 library(thematic)
-library(shinyWidgets)
+#library(shinyWidgets)
 
 
 # set themes
