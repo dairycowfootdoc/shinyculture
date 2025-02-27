@@ -31,28 +31,26 @@ ui <- page_sidebar(
       # Specify the file type(s) that can be uploaded (does not guarantee a csv)
       accept = ".csv"
     ),
-    textInput("herd", "Enter HerdCode (Usually 8 numbers)", c("Test")
+    textInput("herd", "Enter HerdCode (Usually 8 numbers)", c("HerdCode")
     # selectInput(
     #   "herd", "Select Herd",
     #   choices = c("41464500", "41230523")
     ),
+    downloadButton("downloadData", "Download HerdCode.DNQ"),
     br(),
     br(),
     checkboxInput("dark_mode", "Dark mode", value = FALSE)
   ),
-  card_body(
+  layout_columns(page_fluid(
       card("File Contents",
       tableOutput("table")
       ),
-      # Button
-      card(downloadButton("downloadData", "Download Herdname.DNQ"),
-           height = "75px"
-      )
-          ),
+      row_heights = c(1)
+      )),
   #shinyWidgets::setBackgroundImage(src = "b_clean_labelled.jpg")
   img(src = "b_clean_labelled.jpg",
-      width = "75px",
-      height = "75px",
+      width = "150px",
+      height = "150px",
       style = "position: fixed; bottom: 
       24px; right: 24px; opacity: 0.75; z-index: -1"
       )
